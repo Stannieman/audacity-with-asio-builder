@@ -1,0 +1,463 @@
+﻿
+
+Steinberg ASIO SDK Licensing Agreement
+(Version ”2.3.1 – 04.07.2018”)
+between
+Steinberg Media Technologies GmbH
+Represented by Mr. Andreas Stelling, MD
+Beim Strohhause 31
+20097 Hamburg
+GERMANY
+- hereinafter ‘Steinberg’ and
+Company:
+
+______________________________________
+
+Represented by:
+
+______________________________________
+
+Address:
+
+______________________________________
+
+City, zip code:
+
+______________________________________
+
+Country:
+
+______________________________________
+- hereinafter ‘Licensee’ §1
+OBJECT OF THE AGREEMENT
+
+1.
+
+The object of this agreement consists of the Steinberg ASIO (Audio Stream I/O) Software
+Development Kit version 2.3, respectively any preview version of this Kit, comprising of
+documentation, example code, and several ASIO examples. These are described hereinafter
+as the "Licensed Software Developer Kit".
+
+2.
+
+In case a preview or beta version of the Licensed Software Developer Kit is provided, the
+Licensee is allowed to use the Licensed Software Developer Kit solely for internal evaluations.
+Any publishing, distribution or transfer to a third party is not permitted.
+
+3.
+
+Steinberg is the holder of all copyrights, rights of ownership, and other rights concerning the
+Licensed Software Developer Kit.
+
+4.
+
+The Licensed Software Developer Kit contains information about
+
+
+how to develop an ASIO Driver, and
+
+
+
+how to extend an application so that it can host ASIO Drivers, that are developed
+under the ASIO Specification, either by Steinberg or any Third-Parties.
+
+Currently the Licensed Software Developer Kit is running on the following computer platforms:
+
+
+Windows XP, Windows Vista, Windows 7, Windows 8 and Windows 10
+(32 and 64bit)
+
+1
+
+§2
+GRANTING OF RIGHTS
+
+1.
+
+Steinberg hereby grants to the Licensee a non-exclusive, worldwide, non-transferable license
+during the term of this agreement to use the Licensed Software Developer Kit and ASIO
+Interface Technology solely:
+a)
+
+for the development of ASIO Drivers and/or of an application that can host ASIO
+Drivers (herein ASIO Driver Compliant Products),
+
+b)
+
+publish, sell or otherwise distribute a ASIO Driver Compliant Product under his own
+brand name that is using parts or all of the Licensed Software Developer Kit.
+
+2.
+
+In case the Licensee receives a preview or beta version of the Licensed Software Developer
+Kit, the Licensee is not allowed to publish any ASIO Driver Compliant Product to the public
+using a such preview or beta Software Developer Kit. The Licensee is only allowed to publish a
+ASIO Driver Compliant Product to the public based on a Licensed Software Developer Kit
+which is not declared as a preview or beta version by Steinberg.
+
+3.
+
+The Licensee has no permission to sell, license, give-away and/or distribute the Licensed
+Software Developer Kit or parts of it for the use as software developer kit in any way, for
+example, integrated in any framework application, on any medium, including the Internet, to any
+other person, including sub-licensors of the Licensee or companies where the Licensee has any
+involvement. This includes re-working this specification, or reverse-engineering any products
+based upon this specification.
+
+4.
+
+In case the Licensed Software Developer Kit is modified, it shall not be published, sold or
+distributed without agreement of Steinberg. Furthermore, the naming of the Licensed Software
+Developer Kit shall not include “ASIO 2.3 SDK” or any combination containing the ASIO brand
+without permission of Steinberg.
+
+5.
+
+In case the Licensed Software Developer Kit is extended by additional code, it shall not be
+used in any other description than “(Licensees company name) extension to the Steinberg ASIO
+2.3 SDK”.
+
+6.
+
+The Licensee recognizes the value of the goodwill associated with the mark ASIO and ASIO
+Technology and acknowledges that such goodwill exclusively belongs to the benefit of Steinberg
+and belongs to Steinberg.
+
+7.
+
+If the Licensee is developing a ASIO Driver Compliant Product, that is using parts or all of the
+Licensed Software Developer Kit, and this product is not published under his own name but
+will be published under the name of a third party, this third party has to agree in writing to be
+bound by this ASIO SDK Licensing Agreement. Licensee warrants that the third party has
+completely complies with all provisions of this ASIO SDK Licensing Agreement and will upon
+Steinberg’s request provide the written consent of the third party to be bound to all provisions of
+this this ASIO SDK Licensing Agreement. If the third party is not in accordance with any of these
+conditions, the third party is not allowed to distribute this product which is using parts or all of
+the Licensed Software Developer Kit.
+
+8.
+
+If the Licensee is planning to publish a ASIO Driver Compliant Product, under the name of a
+third party, that is using parts or all of the Licensed Software Developer Kit, the Licensee is
+under the obligation to send the signed ‘Steinberg ASIO SDK Licensing Agreement’ signed by
+the third party to Steinberg, either by mail, or by fax.
+§3
+COPYRIGHTS NOTICE AND USE OF TRADEMARKS
+
+1.
+
+If the Licensee is publishing or distributing a ASIO Driver Compliant Product or code that is using
+parts or all of the Licensed Software Developer Kit, the Licensee shall be under an obligation
+to refer to Steinberg’s copyrights and trademarks in the following way:
+
+2
+
+a) In case that the Licensee is publishing or distributing a “boxed product”, the Licensee
+shall display in a visible manner the ASIO Logo and Steinberg’s copyright notice on the
+packages. Steinberg’s Copyrights notice: “ASIO is a trademark and software of
+Steinberg Media Technologies GmbH”
+b) In case the ASIO Driver Compliant Product is published without a physical package
+(e.g. download), the Licensee shall display the ASIO Logo and Steinberg’s copyrights
+notice on the Licensee’s website in the context of the ASIO Driver Compliant Product.
+Steinberg's copyrights notice: ”ASIO is a trademark and software of Steinberg Media
+Technologies GmbH”
+c) In any other case the Licensee shall display the ASIO Logo and Steinberg's copyrights
+notice on the Licensee's website in the context of the Product. Steinberg's copyrights
+notice: ”ASIO is a trademark and software of Steinberg Media Technologies GmbH”
+d) The Licensee shall include the ASIO Logo and Steinberg’s copyrights notice in
+
+
+all electronic documentation, regardless of the media used, such as PDF
+manuals, websites etc. and
+
+
+
+all printed and electronic advertising materials.
+
+The ASIO Logo artwork and usage guidelines are part of the "Licensed Software
+Developer Kit" and are supplied by Steinberg in digital format.
+e) In the ‘about box’ or an alternative place (e.g. help menu, start-up screen) of the product
+in one of the following formats:
+
+f)
+
+
+
+ASIO Driver Technology by Steinberg Media Technologies,
+
+
+
+ASIO Driver Interface Technology by Steinberg Media Technologies GmbH.
+
+The Licensee will comply with the usage guidelines for the use of the ASIO Logo as
+supplied by Steinberg.
+
+g) The Licensee warrants that it will not use Steinberg’s ASIO trademarks (meaning any
+Steinberg trademarks containing “ASIO”) or “ASIO” with or without additions like in
+“ASIOi” on promotional merchandise, with the exception of demo versions of any of his
+product.
+h) The Licensee warrants that it will not use Steinberg’s ASIO trademarks, “ASIO” or ASIO
+Technology on, or in connection with products obscene, pornographic, excessively
+violent or otherwise in poor taste.
+i)
+
+The Licensee warrants that it will not use Steinberg’s ASIO trademarks, “ASIO”, with or
+without additions or the ASIO compatible Logo on or in connection with any product that
+is not compatible with Steinberg’s ASIO technology.
+
+j)
+
+The Licensee is allowed to add to any product name of products that are compatible
+with Steinberg’s ASIO technology or making use of Licensed Software Developer Kit
+“ASIO compatible, “for ASIO”, “compatible with ASIO” or similar in any language as long
+ASIO is set in regular type and not graphically illustrated and Steinberg's copyrights
+notice ”ASIO is a trademark and software of Steinberg Media Technologies GmbH” is
+shown.
+
+k) Licensee warrants not to use “ASIO”, with or without additions like in “ASIOi”, in any
+other form than specified above, especially not include it in a firm or product name
+related to or similar to audio, music and/or software.
+l)
+
+Licensee will document the use of Steinberg’s ASIO trademarks by archiving for every
+year dated pictures showing the use of ASIO by Licensee in connection with the
+products it was used for and sales figures broken down by countries as well as
+screenshots of websites showing Steinberg’s ASIO trademarks and user counts
+regarding those websites and upon Steinberg’s request provide them to Steinberg and
+or the relevant offices and/or courts.
+
+m) To the extend described above Steinberg grants a revocable non-exclusive license to
+use Steinberg’s ASIO trademarks to the Licensee.
+
+3
+
+§4
+FEES AND ROYALTIES
+This license is non-royalty bearing and the Licensee shall not be obligated to pay to Steinberg
+any fees or royalties with respect to the ASIO Interface Technology.
+§5
+LIMITATION OF LIABILITY
+1.
+
+Subject to the provisions in the following sub-sections, Steinberg shall only be liable, irrespective
+of the legal grounds, for damages caused by the intentional or grossly negligent conduct of
+Steinberg, its legal representatives, managerial employees or any other vicarious agents. In the
+case of damage caused by the grossly negligent conduct of any other vicarious agents, the
+liability shall be limited to those damages which must typically be expected within the scope of
+an agreement such as the present one. Any further liability other than as permitted under this
+agreement shall be excluded.
+
+2.
+
+Any liability of Steinberg for damages arising from violation of life, body and health, from the
+assumption of a guarantee or from a procurement risk as well as Steinberg's liability for
+damages pursuant to the Product Liability Act (Produkthaftungsgesetz) shall remain unaffected.
+
+3.
+
+To the extent the liability of Steinberg is excluded pursuant to the subsections of these
+provisions, this shall also apply to the benefit of Steinberg's employees in the event the Licensee
+files any claims directly against them.
+§6
+PRODUCT WARRANTY
+
+1.
+
+Steinberg licences the ASIO Interface Technology on an "AS IS" basis.
+Steinberg makes no warranties, express or implied, including without limitation the implied
+warranties of merchantability and fitness for a particular purpose, regarding the ASIO Interface
+Technology or operation and use in combination with the Licensee’s program. Neither the
+Licensee, its employees, agents or Distributors have any right to make any other representation,
+warranty or promise with respect to the ASIO Interface Technology.
+
+2.
+
+In no event shall Steinberg be liable for incidental, indirect or consequential damages arising
+from the use, or distribution of the ASIO Interface Technology by the Licensee, whether theory
+of contract, product liability or otherwise.
+All claims for indemnification for losses by the Licensee itself or by third parties shall be
+excluded.
+
+3.
+
+Steinberg may in its sole discretion discontinue the distribution of the current ASIO Driver SDK
+and/or release improved versions of the Licensed Software Developer Kit but offers no
+commitment whatsoever those releases will occur at any time or for anybody.
+§7
+INFRINGEMENT
+
+1.
+
+Steinberg represents and warrants that, as of the date of this Agreement, it is not aware of any
+claim or action alleging that ASIO, the ASIO Interface Technology, or the content of the
+Licensed Software Developer Kit infringes any third party intellectual property right.
+
+4
+
+2.
+
+Steinberg, however, disclaims any obligation of defence or indemnify of the Licensee or its
+customer with respect to any such claim or action, or otherwise arising out of this agreement.
+Steinberg shall have no liability arising out of any such actual or alleged intellectual property
+infringement.
+
+3.
+
+The Licensee, however, shall promptly notify Steinberg, in writing, of each such infringement
+claim of which the Licensee becomes aware. Steinberg may defend the Licensee against such
+claims. In such case, the Licensee is obligated to duly support Steinberg’s defence.
+§8
+RELATIONSHIP BETWEEN THE TWO PARTIES
+Nothing stated in this Agreement will be construed as creating the relationships of joint ventures,
+partners, principal, agent or whatsoever. The Licensee shall not be entitled to represent
+Steinberg or to make statements on its behalf.
+§9
+TERM AND TERMINATION
+
+1.
+
+The Agreement shall run for an unlimited period.
+
+2.
+
+Steinberg is entitled to terminate this agreement with a 36 months written notice. For the validity
+of the termination it shall be sufficient that Steinberg sends the termination to the last known
+email address of the Licensee.
+
+3.
+
+Steinberg is entitled to terminate this agreement with a 6 months written notice if Steinberg’s
+offers a new, e.g. amended, ASIO Plug-In SDK Licensing Agreement. For the validity of the
+termination it shall be sufficient that Steinberg sends the termination to the last known email
+address of the Licensee.
+
+4.
+
+If the Licensee is in breach of any material obligations set out in this agreement and does not
+cure such breach by Steinberg’s demand within 14 days, Steinberg shall be entitled to terminate
+this agreement immediately. In such a case, this license and all the rights granted to the
+Licensee herein shall immediately cease. For the validity of the demand and the termination it
+shall be sufficient that Steinberg sends the termination to the last known email address of the
+Licensee.
+
+5.
+
+In case that Steinberg publishes a new version of the Licensed Software Developer Kit subject
+to a separate licensing agreement, Steinberg is entitled to terminate this Agreement and any
+foregoing ASIO Driver SDK Licensing Agreement regarding previous versions of the ASIO
+Driver SDK with a 6 months written notice. For the validity of the termination it shall be sufficient
+that Steinberg sends the termination to the last known email address of the Licensee.
+
+6.
+
+The right to extraordinary termination for good cause shall remain unaffected.
+§ 10
+FINAL PROVISIONS
+
+1.
+
+The Licensee declares himself to be in agreement with the use of any personal data obtained
+through this licensing relationship by Steinberg for its own company purposes, and for the
+purposes of its Company Group, within the meaning of the relevant Data Protection laws.
+
+2.
+
+This Agreement is the complete and exclusive understanding between the parties with respect
+to the subject matter hereof. Amendments, supplements and notices of termination of this
+Agreement must be made in writing. The rescission of this Agreement or an alteration to the
+requirement of the written form must also be made in writing.
+
+5
+
+3.
+
+If anyone stipulation of this Agreement should be or become invalid, completely or in part, this
+shall not affect the validity of the remaining stipulations. The invalid stipulations shall be deemed
+to be replaced with a valid regulation which comes as closely as commercially desired possible
+to the purpose originally intended for the ineffective provision; the same shall apply in the case
+or a contractual gap.
+
+4.
+
+Any and all prior ASIO Driver SDK agreements between Steinberg and the Licensee regarding
+previous ASIO Driver SDK versions shall be automatically terminated by signing this Agreement.
+
+5.
+
+This agreement and the interpretation thereof shall be exclusively subject to the laws of the
+Federal Republic of Germany without the application of the UN Convention on the Sale of Goods
+(CISG). Place of jurisdiction for all disputes is Hamburg. In addition, each party can bring an
+action against the other party at the general place of jurisdiction of the other party.
+
+6.
+
+This agreement does not require a specific form (e.g. recording by a notary).
+
+-
+
+Steinberg Media Technologies GmbH
+
+-
+
+By:
+Title:
+
+Managing Director
+
+Date executed:
+
+............................................................................................
+
+Printed Signature:
+
+Mr. Andreas Stelling
+
+Email:
+
+reception@steinberg.de
+
+-
+
+Licensee
+
+-
+
+By:
+
+...........................................................................................
+
+Title:
+
+...........................................................................................
+
+Date executed:
+
+............................................................................................
+
+Printed Signature:
+
+............................................................................................
+
+-
+
+Licensee Technical Contact -
+
+Name:
+
+............................................................................................
+
+Address:
+
+............................................................................................
+
+Phone:
+
+............................................................................................
+
+Email:
+
+.............................................................................................
+
+6
+
+

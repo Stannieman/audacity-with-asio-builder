@@ -1,0 +1,25 @@
+version: '2.4'
+
+networks:
+    audacity-asio-builder:
+        name: audacity-asio-builder
+        driver: nat
+                  
+services:
+    audacity-asio-builder:
+        container_name: audacity-asio-builder
+        hostname:  audacity-asio-builder
+        image: stannieman/audacity-with-asio-builder:1.0.0
+        volumes:
+            - .\Volume:C:\externalvolume
+        environment:
+            - WXWIDGETS_VERSION=3.1.1
+            - AUDACITY_COMMIT_HASH=af276ac4f998e0869072a999d34812ea4a17eb9f
+            - ASIO_SDK_VERSION=2.3.1
+        storage_opt:
+            size: 15G
+        cpu_count: 2
+        cpu_percent: 100
+        mem_limit: 3GB
+        networks:
+            - audacity-asio-builder
