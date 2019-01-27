@@ -21,7 +21,7 @@ function canUseProcessIsolation() {
 Write-Host -NoNewline "Audacity tag or full commit hash (leave blank for default: $audacityTag): "
 getUserInput ([ref]$audacityTag)
 
-Write-Host -NoNewline "WXWidgets version (leave blank for default: $wxWidgetsVersion): "
+Write-Host -NoNewline "wxWidgets version (leave blank for default: $wxWidgetsVersion): "
 getUserInput ([ref]$wxWidgetsVersion)
 
 Write-Host -NoNewline "ASIO SDK version (leave blank for default: $asioSdkVersion): "
