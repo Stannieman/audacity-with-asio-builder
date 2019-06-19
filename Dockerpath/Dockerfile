@@ -9,6 +9,9 @@ COPY $VS_BUILD_TOOLS_INSTALLER_FILE_NAME .
 RUN New-Item Tools -Type Directory
 RUN New-Item BuildDir -Type Directory
 
+ARG WINDOWS_SDK_DIR='Program Files (x86)/Windows Kits/10'
+ARG WINDOWS_SDK_VERSION='10.0.18362.0'
+
 RUN $process = Start-Process -Wait -PassThru -FilePath `\"$env:VS_BUILD_TOOLS_INSTALLER_FILE_NAME`\" -ArgumentList \"--quiet --wait --norestart --nocache --installPath `\"$env:VS_BUILD_TOOLS_INSTALL_PATH`\" \
 --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 \
 --add Microsoft.VisualStudio.Component.Windows10SDK.18362\";\
@@ -19,9 +22,26 @@ Remove-Item -Force -Recurse \"$env:LOCALAPPDATA/Microsoft/VisualStudio\";\
 Remove-Item -Force -Recurse \"$env:LOCALAPPDATA/Microsoft/VSApplicationInsights\";\
 Remove-Item -Force -Recurse \"$env:APPDATA/vstelemetry\";\
 Remove-Item -Force -Recurse 'Users/ContainerAdministrator/AppData/Roaming/Visual Studio Setup';\
+Remove-Item -Force -Recurse 'Program Files (x86)/Microsoft SDKs';\
+Get-ChildItem \"$env:WINDOWS_SDK_DIR\" -Exclude bin, DesignTime, Include, Lib, Platforms, *.* | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:WINDOWS_SDK_DIR/bin\" -Exclude \"$env:WINDOWS_SDK_VERSION\" | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:WINDOWS_SDK_DIR/bin/$env:WINDOWS_SDK_VERSION\" -Exclude x86 | Remove-Item -Recurse -Force;\
+Remove-Item -Force -Recurse \"$env:WINDOWS_SDK_DIR/Include/$env:WINDOWS_SDK_VERSION/cppwinrt\";\
+Get-ChildItem \"$env:WINDOWS_SDK_DIR/Lib/$env:WINDOWS_SDK_VERSION\" -Exclude ucrt, um | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:WINDOWS_SDK_DIR/Lib/$env:WINDOWS_SDK_VERSION/ucrt\" -Exclude x86 | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:WINDOWS_SDK_DIR/Lib/$env:WINDOWS_SDK_VERSION/um\" -Exclude x86 | Remove-Item -Recurse -Force;\
+Remove-Item -Force -Recurse \"$env:WINDOWS_SDK_DIR/DesignTime/UAP\";\
+Get-ChildItem \"$env:VS_BUILD_TOOLS_INSTALL_PATH\" -Exclude MSBuild, VC | Remove-Item -Recurse -Force;\
+Remove-Item -Force -Recurse \"$env:VS_BUILD_TOOLS_INSTALL_PATH/MSBuild/Microsoft/VisualStudio\";\
+Remove-Item -Force -Recurse \"$env:VS_BUILD_TOOLS_INSTALL_PATH/MSBuild/Current/Bin/amd64\";\
+Get-ChildItem \"$env:VS_BUILD_TOOLS_INSTALL_PATH/VC/Redist/MSVC/*/\" -Exclude x86 | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:VS_BUILD_TOOLS_INSTALL_PATH/VC/Redist/MSVC/*/x86\" -Exclude Microsoft.VC*.CRT | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:VS_BUILD_TOOLS_INSTALL_PATH/VC/Tools/MSVC/*/lib\" -Exclude x86 | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:VS_BUILD_TOOLS_INSTALL_PATH/VC/Tools/MSVC/*/bin\" -Exclude Hostx86 | Remove-Item -Recurse -Force;\
+Get-ChildItem \"$env:VS_BUILD_TOOLS_INSTALL_PATH/VC/Tools/MSVC/*/bin/Hostx86\" -Exclude x86 | Remove-Item -Recurse -Force;\
 Remove-Item -Force -Recurse $env:TEMP;\
 Remove-Item -Force -Recurse \"$env:WINDIR/Temp\"
-ENV EXECUTABLE_MSBUILD=C:\\VSBuildTools\\MSBuild\\15.0\\Bin\\amd64\\MSBuild.exe
+ENV EXECUTABLE_MSBUILD=C:\\VSBuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe
 
 # NuGet
 ARG VERSION=5.1.0
