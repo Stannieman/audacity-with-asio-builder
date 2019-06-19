@@ -1,5 +1,5 @@
 $mountedVolumeDir = "$PSScriptRoot/Volume"
-$windowsVersionForProcessIsolation = '10.0.17763'
+$windowsVersionForProcessIsolation = '10.0.18362'
 
 # Defaults
 $audacityTag = 'Audacity-2.3.2'

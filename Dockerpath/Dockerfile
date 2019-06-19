@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/servercore:1809_KB4480116
+FROM mcr.microsoft.com/windows/servercore:1903-KB4505057
 SHELL ["powershell.exe"]
 
 ARG VS_BUILD_TOOLS_INSTALL_PATH=C:\\VSBuildTools
