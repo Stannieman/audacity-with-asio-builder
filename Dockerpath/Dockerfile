@@ -24,8 +24,8 @@ Remove-Item -Force -Recurse \"$env:WINDIR/Temp\"
 ENV EXECUTABLE_MSBUILD=C:\\VSBuildTools\\MSBuild\\15.0\\Bin\\amd64\\MSBuild.exe
 
 # NuGet
-ARG VERSION=4.9.3
-ARG FILE_CHECKSUM=1051F2053643A9FB5D8BF9BA7CF638164A3118541E90A671442CF3499C9606EF
+ARG VERSION=5.1.0
+ARG FILE_CHECKSUM=0ACE4F53493332C9A75291EE96ACD76B371B4E687175E4852BF85948176D7152
 ARG DOWNLOAD_URL=https://dist.nuget.org/win-x86-commandline/v$VERSION/nuget.exe
 RUN (New-Object Net.WebClient).DownloadFile($env:DOWNLOAD_URL, 'Tools/nuget.exe');\
 if ((Get-FileHash Tools/nuget.exe -Algorithm SHA256).Hash -ne $env:FILE_CHECKSUM) { throw \"Checksum of nuget.exe not correct.\" }
