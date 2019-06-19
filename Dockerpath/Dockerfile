@@ -10,9 +10,8 @@ RUN New-Item Tools -Type Directory
 RUN New-Item BuildDir -Type Directory
 
 RUN $process = Start-Process -Wait -PassThru -FilePath `\"$env:VS_BUILD_TOOLS_INSTALLER_FILE_NAME`\" -ArgumentList \"--quiet --wait --norestart --nocache --installPath `\"$env:VS_BUILD_TOOLS_INSTALL_PATH`\" \
---add Microsoft.Component.MSBuild \
---add Microsoft.VisualStudio.Workload.VCTools \
---add Microsoft.VisualStudio.Component.Windows10SDK.17763\";\
+--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 \
+--add Microsoft.VisualStudio.Component.Windows10SDK.18362\";\
 if ($process.ExitCode) { throw \"Installation of Visual Studio Build Tools failed: $($process.ExitCode).\" };\
 Remove-Item -Force $env:VS_BUILD_TOOLS_INSTALLER_FILE_NAME;\
 Remove-Item -Force -Recurse 'Program Files (x86)/Microsoft Visual Studio';\
