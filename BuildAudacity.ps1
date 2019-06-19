@@ -2,8 +2,8 @@ $mountedVolumeDir = "$PSScriptRoot/Volume"
 $windowsVersionForProcessIsolation = '10.0.17763'
 
 # Defaults
-$audacityTag = 'Audacity-2.3.0'
-$wxWidgetsVersion = '3.1.2'
+$audacityTag = 'Audacity-2.3.2'
+$wxWidgetsVersion = '3.1.1'
 $asioSdkVersion = '2.3.2'
 
 function getUserInput ([ref]$value) {
