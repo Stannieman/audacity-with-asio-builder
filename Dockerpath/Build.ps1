@@ -1,5 +1,4 @@
 $extractedZipDir = 'ExtractedZip'
-$windowsSdkVersion = '10.0.17763.0'
 
 function DownloadAndExtract ([string]$downloadUrl, [string]$extractedFolderPattern, [string]$destinationName) {
     Write-Host "----DOWNLOADING $downloadUrl TO FILE file.zip"
@@ -18,19 +17,6 @@ function DownloadAndExtract ([string]$downloadUrl, [string]$extractedFolderPatte
     }
     Write-Host "----RENAMING EXTRACTED FOLDER $extractedFolder TO $destinationName"
     Move-Item $extractedFolder/* $destinationName/
-}
-
-function SetWindowsSdkVersion ([string]$solutionDir) {
-    $files = Get-ChildItem $solutionDir -Recurse -Filter '*.vcxproj'
-    foreach ($file in $files) {
-        Write-Host "----SETTING WINDOWS SDK VERSION IN `"$($file.FullName)`""
-        $content = Get-Content $file.FullName
-
-        $content = $content -replace '<WindowsTargetPlatformVersion>.*</WindowsTargetPlatformVersion>', "<WindowsTargetPlatformVersion>$windowsSdkVersion</WindowsTargetPlatformVersion>"
-        $content = $content -replace '<PropertyGroup Label="Globals">', "<PropertyGroup Label=`"Globals`"><WindowsTargetPlatformVersion>$windowsSdkVersion</WindowsTargetPlatformVersion>"
-
-        Set-Content -Path $file.FullName -Value $content
-    }
 }
 
 Write-Host "In order to build Audacity with ASIO support we need to download the Steinberg ASIO SDK.`
@@ -68,17 +54,8 @@ DownloadAndExtract -downloadUrl "https://www.steinberg.net/sdk_downloads/ASIOSDK
 -extractedFolderPattern "ASIOSDK$env:ASIO_SDK_VERSION"`
 -destinationName 'BuildDir/AsioSdk'
 
-# By default wxWidgets wants to build against 8.1 SDK.
-# However including extra Windows SDKs drastically increases the Docker image size.
-# I decided to build everything against the same SDK being 10.0.17763.0 (Windows 10 1809)
-# to keep image size reasonable. 
-Write-Host "`n`n`n`nSETTING WXWIDGETS WINDOWS SDK VERSION"
-SetWindowsSdkVersion -solutionDir 'BuildDir/WXWidgets/build/msw'
-Write-Host "`n`n`n`nSETTING AUDACITY WINDOWS SDK VERSION"
-SetWindowsSdkVersion -solutionDir 'BuildDir/Audacity/win'
-
 Write-Host "`n`n`n`nBUILDING WXWIDGETS"
-Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\WXWidgets\build\msw\wx_vc15.sln /m /t:Build /p:Configuration='DLL Release' /p:BuildInParallel=True /p:PlatformTraget=x86"
+Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\WXWidgets\build\msw\wx_vc15.sln /m /t:Build /p:Configuration='DLL Release' /p:BuildInParallel=True /p:PlatformTraget=x86 /p:PlatformToolset=v142 /p:WindowsTargetPlatformVersion=10.0"
 
 Write-Host "`n`n`n`nRESTORING NUGET PACKAGES FOR AUDACITY"
 cd BuildDir/Audacity/win
@@ -86,7 +63,7 @@ Invoke-Expression "& `"$env:EXECUTABLE_NUGET`" restore"
 cd ../../..
 
 Write-Host "`n`n`n`nBUILDING AUDACITY"
-Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\Audacity\win\audacity.sln /m /t:Build /p:Configuration=Release /p:BuildInParallel=True /p:PlatformTraget=x86"
+Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\Audacity\win\audacity.sln /m /t:Build /p:Configuration=Release /p:BuildInParallel=True /p:PlatformTraget=x86 /p:PlatformToolset=v142 /p:WindowsTargetPlatformVersion=10.0"
 
 Write-Host "`n`n`n`nPREPARING BUILD FOR PACKAGING"
 Get-ChildItem BuildDir/Audacity/win/Release -Filter '*.lib' | Remove-Item
