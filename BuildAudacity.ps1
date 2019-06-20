@@ -4,7 +4,7 @@ $windowsVersionForProcessIsolation = '10.0.18362'
 # Defaults
 $audacityTag = 'Audacity-2.3.2'
 $wxWidgetsVersion = '3.1.1'
-$asioSdkVersion = '2.3.2'
+$asioSdkDownloadUrl = 'https://download.steinberg.net/sdk_downloads/asiosdk_2.3.3_2019-06-14.zip'
 
 function getUserInput ([ref]$value) {
     $userInput = Read-Host
@@ -24,8 +24,8 @@ getUserInput ([ref]$audacityTag)
 Write-Host -NoNewline "wxWidgets version (leave blank for default: $wxWidgetsVersion): "
 getUserInput ([ref]$wxWidgetsVersion)
 
-Write-Host -NoNewline "ASIO SDK version (leave blank for default: $asioSdkVersion): "
-getUserInput ([ref]$asioSdkVersion)
+Write-Host -NoNewline "ASIO SDK ZIP file download URL (use `"latest`" for the latest version or leave blank for default: $asioSdkDownloadUrl): "
+getUserInput ([ref]$asioSdkDownloadUrl)
 
 Write-Host "`n`n`n`nResetting mounted volume folder"
 if (Test-Path($mountedVolumeDir)) {
@@ -40,7 +40,7 @@ if (canUseProcessIsolation) {
     $processIsolationPart = 'process'
 }
 
-Invoke-Expression "& docker run -it -m 3G --cpus 2 --rm --isolation $processIsolationPart -v='$mountedVolumeDir':C:\externalVolume -e `"WXWIDGETS_VERSION=$wxWidgetsVersion`" -e `"AUDACITY_COMMIT_HASH=$audacityTag`" -e `"ASIO_SDK_VERSION=$asioSdkVersion`" stannieman/audacity-with-asio-builder:1.1.0 powershell -File Build.ps1"
+Invoke-Expression "& docker run -it -m 3G --cpus 2 --rm --isolation $processIsolationPart -v='$mountedVolumeDir':C:\externalVolume -e `"WXWIDGETS_VERSION=$wxWidgetsVersion`" -e `"AUDACITY_COMMIT_HASH=$audacityTag`" -e `"ASIO_SDK_DOWNLOAD_URL=$asioSdkDownloadUrl`" audacity-with-asio-builder:1.2.0 powershell"
 
 # Foreground color is changed from inside container.
 $Host.UI.RawUI.ForegroundColor = 'White'

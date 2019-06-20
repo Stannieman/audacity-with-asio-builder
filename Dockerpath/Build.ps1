@@ -27,7 +27,7 @@ try {
 	Get-Content SteinbergLicensingAgreement.txt | Out-Host -Paging
 }
 catch {
-	exit;
+	exit
 }
 
 Write-Host "`n`n`n`nIf you agree with this agreement enter YES.`
@@ -35,7 +35,7 @@ If you do not agree you can enter anything else and the process will not continu
 $answer = Read-Host
 
 if ($answer -ne 'YES') {
-	exit;
+	exit
 }
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -50,8 +50,12 @@ DownloadAndExtract -downloadUrl "https://github.com/audacity/audacity/archive/$(
 -destinationName 'BuildDir/Audacity'
 
 Write-Host "`n`n`n`nDOWNLOADING AND EXTRACTING ASIO SDK"
-DownloadAndExtract -downloadUrl "https://www.steinberg.net/sdk_downloads/ASIOSDK$($env:ASIO_SDK_VERSION).zip" `
--extractedFolderPattern "ASIOSDK$env:ASIO_SDK_VERSION"`
+$asioSdkDownloadUrl = $env:ASIO_SDK_DOWNLOAD_URL
+if ($asioSdkDownloadUrl -eq 'latest') {
+	$asioSdkDownloadUrl = 'https://www.steinberg.net/asiosdk'
+}
+DownloadAndExtract -downloadUrl $asioSdkDownloadUrl `
+-extractedFolderPattern "ASIOSDK*"`
 -destinationName 'BuildDir/AsioSdk'
 
 Write-Host "`n`n`n`nBUILDING WXWIDGETS"
