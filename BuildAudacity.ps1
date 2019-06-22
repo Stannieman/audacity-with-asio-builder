@@ -40,7 +40,7 @@ if (canUseProcessIsolation) {
     $processIsolationPart = 'process'
 }
 
-Invoke-Expression "& docker run -it -m 3G --cpus 2 --rm --isolation $processIsolationPart -v='$mountedVolumeDir':C:\externalVolume -e `"WXWIDGETS_VERSION=$wxWidgetsVersion`" -e `"AUDACITY_COMMIT_HASH=$audacityTag`" -e `"ASIO_SDK_DOWNLOAD_URL=$asioSdkDownloadUrl`" audacity-with-asio-builder:1.2.0 powershell"
+Invoke-Expression "& docker run -it -m 3G --cpus 2 --rm --isolation $processIsolationPart -v='$mountedVolumeDir':C:\externalVolume -e `"WXWIDGETS_VERSION=$wxWidgetsVersion`" -e `"AUDACITY_COMMIT_HASH=$audacityTag`" -e `"ASIO_SDK_DOWNLOAD_URL=$asioSdkDownloadUrl`" stannieman/audacity-with-asio-builder:1.2.0 powershell -File Build.ps1"
 
 # Foreground color is changed from inside container.
 $Host.UI.RawUI.ForegroundColor = 'White'
