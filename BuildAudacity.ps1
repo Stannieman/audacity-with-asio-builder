@@ -1,7 +1,7 @@
 $mountedVolumeDir = "$PSScriptRoot/Volume"
 
 # Defaults
-$audacityTag = 'Audacity-2.3.2'
+$audacityTag = 'Audacity-2.3.3'
 $wxWidgetsVersion = '3.1.1'
 $asioSdkDownloadUrl = 'https://download.steinberg.net/sdk_downloads/asiosdk_2.3.3_2019-06-14.zip'
 
