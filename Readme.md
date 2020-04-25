@@ -1,6 +1,6 @@
 # Building Audacity with ASIO support using the Docker image
 In order to build *Audacity* with the *Docker* image you need, well… *Docker*!
-In particular you need *Docker* 18.09.1 or higher and *Windows* 10 1903 or higher.
+In particular you need *Docker* 18.09.1 or higher and *Windows* 10 1909 or higher.
 If you are comfortable with *Docker* you can probably stop reading here. You need to switch to *Windows containers* and run the *BuildAudacity.ps1* script. If you have no clue what I'm talking about then don't worry, I'll guide you through.
 ## Pre-requisites
 Because *Docker for Windows* requires *Windows 10 Pro* you are out of luck if you don't have that.
