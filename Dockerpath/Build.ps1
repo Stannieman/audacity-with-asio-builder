@@ -59,7 +59,7 @@ DownloadAndExtract -downloadUrl $asioSdkDownloadUrl `
 -destinationName 'BuildDir/AsioSdk'
 
 Write-Host "`n`n`n`nBUILDING WXWIDGETS"
-Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\WXWidgets\build\msw\wx_vc15.sln /m /t:Build /p:Configuration='DLL Release' /p:BuildInParallel=True /p:PlatformTraget=x86 /p:PlatformToolset=v142 /p:WindowsTargetPlatformVersion=10.0"
+Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\WXWidgets\build\msw\wx_vc15.sln /m /t:Build /p:Configuration='DLL Release' /p:BuildInParallel=True /p:PlatformTarget=x86 /p:PlatformToolset=v142 /p:WindowsTargetPlatformVersion=10.0"
 
 Write-Host "`n`n`n`nRESTORING NUGET PACKAGES FOR AUDACITY"
 cd BuildDir/Audacity/win
@@ -67,7 +67,7 @@ Invoke-Expression "& `"$env:EXECUTABLE_NUGET`" restore"
 cd ../../..
 
 Write-Host "`n`n`n`nBUILDING AUDACITY"
-Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\Audacity\win\audacity.sln /m /t:Build /p:Configuration=Release /p:BuildInParallel=True /p:PlatformTraget=x86 /p:PlatformToolset=v142 /p:WindowsTargetPlatformVersion=10.0"
+Invoke-Expression "& `"$env:EXECUTABLE_MSBUILD`" BuildDir\Audacity\win\audacity.sln /m /t:Build /p:Configuration=Release /p:BuildInParallel=True /p:PlatformTarget=x86 /p:PlatformToolset=v142 /p:WindowsTargetPlatformVersion=10.0"
 
 Write-Host "`n`n`n`nPREPARING BUILD FOR PACKAGING"
 Get-ChildItem BuildDir/Audacity/win/Release -Filter '*.lib' | Remove-Item
